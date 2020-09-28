@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {
+import { 
   List,
   CategoryContainer,
   CategoryImage,
@@ -8,7 +8,7 @@ import {
   CategoryStatus,
   RedCircle,
   Info,
-} from './styles';
+ } from './styles';
 
 import data from './data';
 
@@ -23,14 +23,14 @@ const CategoryList: React.FC = () => {
       <CategoryName numberOfLines={1}>{item.name}</CategoryName>
       <CategoryStatus>
         <RedCircle />
-        <Info>51.9K</Info>
+        <Info>51.9k</Info>
       </CategoryStatus>
     </CategoryContainer>
-  );
+  )
 
   return (
     <List>
-      {data.map((item) => (
+      {data.map(item => (
         <CategoryItem key={item.name} item={item} />
       ))}
     </List>

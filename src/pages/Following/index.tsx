@@ -8,6 +8,9 @@ import CategoryList from '../../components/CategoryList';
 import StreamList from '../../components/StreamList';
 import ChannelList from '../../components/ChannelList';
 
+
+
+
 import { Wrapper, Container, Main } from './styles';
 
 interface Item {
@@ -17,7 +20,7 @@ interface Item {
 }
 
 const Following: React.FC = () => {
-  const { data, indices } = React.useMemo(() => {
+  const { data, indices} = React.useMemo(() => {
     const items: Item[] = [
       {
         key: 'PAGE_HEADING',
@@ -26,42 +29,43 @@ const Following: React.FC = () => {
 
       {
         key: 'FOLLOWED_CATEGORIES',
-        render: () => <Title>Followed Categories</Title>,
+        render: () => <Title>Followd Categories</Title>,
         isTitle: true,
       },
-      { key: 'C1', render: () => <CategoryList /> },
+      { key: 'C1', render: () => <CategoryList />},
 
       {
         key: 'LIVE_CHANNELS',
         render: () => <Title>Live Channels</Title>,
         isTitle: true,
       },
-      { key: 'C2', render: () => <StreamList /> },
+      { key: 'C2', render: () => <StreamList />},
 
       {
         key: 'CONTINUE_WATCHING',
-        render: () => <View />,
+        render: () => <Title>Continue Watching</Title>,
         isTitle: true,
       },
-      { key: 'C3', render: () => <View /> },
+      { key: 'C3', render: () => <StreamList />},
 
       {
-        key: 'OFFLINE_CHANNELS',
+        key: 'OFFILNE_CHANNELS',
         render: () => <Title>Offline Channels</Title>,
         isTitle: true,
       },
-      { key: 'C4', render: () => <ChannelList /> },
+      { key: 'C4', render: () => <ChannelList />}
     ];
 
-    const indices: number[] = [];
+    //Array que contem apenas os indices dos elementos que são titulos
+    const indices: number [] = [];
 
     items.forEach((item, index) => item.isTitle && indices.push(index));
 
     return {
       data: items,
       indices,
-    };
-  }, []);
+    }
+  }, [])
 
   return (
     <Wrapper>
@@ -72,7 +76,7 @@ const Following: React.FC = () => {
           <FlatList<Item>
             data={data}
             renderItem={({ item }) => item.render()}
-            keyExtractor={(item) => item.key}
+            keyExtractor={item => item.key}
             stickyHeaderIndices={indices}
             // Refresh Effect
             onRefresh={() => {}}

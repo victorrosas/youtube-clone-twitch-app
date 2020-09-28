@@ -1,12 +1,12 @@
 import React from 'react';
+import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
-import colors from './styles/colors';
-
 import Following from './pages/Following';
 import ComingSoon from './pages/ComingSoon';
+import colors from './styles/colors';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -15,7 +15,7 @@ const Routes: React.FC = () => (
     <Navigator
       tabBarOptions={{
         style: {
-          height: 60,
+          height: 75,
           backgroundColor: colors.primary,
           borderTopWidth: 0,
         },
@@ -34,27 +34,22 @@ const Routes: React.FC = () => (
           marginTop: 5,
         },
         inactiveTintColor: colors.black,
-        activeTintColor: colors.purple,
+        activeTintColor: colors. purple,
       }}
     >
-      <Screen
-        name="Following"
-        component={Following}
-        options={{
-          tabBarIcon: ({ size, focused }) => {
-            return (
-              <Ionicons
-                name="md-heart"
-                size={size}
-                color={focused ? colors.purple : colors.black}
-              />
-            );
-          },
-        }}
-      />
-      <Screen
-        name="Discover"
-        component={ComingSoon}
+      <Screen name="Following" component={Following}
+      options={{
+        tabBarIcon: ({ size, focused }) => {
+          return (
+            <Ionicons
+              name="md-heart"
+              size={size}
+              color={focused ? colors.purple : colors.black}
+            />
+          )
+        }
+      }} />
+      <Screen name="Discover" component={ComingSoon}
         options={{
           tabBarIcon: ({ size, focused }) => {
             return (
@@ -63,13 +58,11 @@ const Routes: React.FC = () => (
                 size={size}
                 color={focused ? colors.purple : colors.black}
               />
-            );
-          },
+            )
+          }
         }}
       />
-      <Screen
-        name="Browse"
-        component={ComingSoon}
+      <Screen name="Browse" component={View}
         options={{
           tabBarIcon: ({ size, focused }) => {
             return (
@@ -78,13 +71,11 @@ const Routes: React.FC = () => (
                 size={size}
                 color={focused ? colors.purple : colors.black}
               />
-            );
-          },
+            )
+          }
         }}
       />
-      <Screen
-        name="Esports"
-        component={ComingSoon}
+      <Screen name="Esports" component={View}
         options={{
           tabBarIcon: ({ size, focused }) => {
             return (
@@ -93,8 +84,8 @@ const Routes: React.FC = () => (
                 size={size}
                 color={focused ? colors.purple : colors.black}
               />
-            );
-          },
+            )
+          }
         }}
       />
     </Navigator>

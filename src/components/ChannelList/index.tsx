@@ -1,6 +1,7 @@
 import React from 'react';
+import { Text } from 'react-native';
 
-import {
+import { 
   List,
   ChannelContainer,
   LeftSide,
@@ -10,7 +11,7 @@ import {
   Info,
   RightSide,
   WhiteCircle,
-} from './styles';
+ } from './styles';
 
 const ChannelList: React.FC = () => {
   const ChannelItem = () => (
@@ -19,7 +20,7 @@ const ChannelList: React.FC = () => {
         <Avatar />
         <Column>
           <Username>rocketseat_oficial</Username>
-          <Info>36 new videos</Info>
+          <Info>36 news videos</Info>
         </Column>
       </LeftSide>
 
@@ -27,10 +28,13 @@ const ChannelList: React.FC = () => {
         <WhiteCircle />
       </RightSide>
     </ChannelContainer>
-  );
+  )
 
   return (
     <List>
+      <ChannelItem />
+      <ChannelItem />
+      <ChannelItem />
       <ChannelItem />
       <ChannelItem />
       <ChannelItem />

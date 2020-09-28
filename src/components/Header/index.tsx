@@ -1,13 +1,9 @@
 import React from 'react';
-import {
-  MaterialIcons,
-  MaterialCommunityIcons,
-  Feather,
-} from '@expo/vector-icons';
-
-import colors from '../../styles/colors';
+import {MaterialIcons, MaterialCommunityIcons, Feather} from '@expo/vector-icons';
 
 import { Container, Avatar, OnlineStatus, RightSide, Button } from './styles';
+
+import colors from '../../styles/colors';
 
 const Header: React.FC = () => {
   return (
@@ -15,7 +11,7 @@ const Header: React.FC = () => {
       <Avatar>
         <OnlineStatus />
       </Avatar>
-
+      
       <RightSide>
         <Button>
           <MaterialIcons
@@ -34,7 +30,11 @@ const Header: React.FC = () => {
         </Button>
 
         <Button>
-          <Feather name="search" size={26} color={colors.black} />
+          <Feather
+            name="search"
+            size={26}
+            color={colors.black}
+          />
         </Button>
       </RightSide>
     </Container>

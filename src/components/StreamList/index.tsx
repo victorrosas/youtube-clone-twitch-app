@@ -2,7 +2,7 @@ import React from 'react';
 
 import streamThumbnail from '../../images/stream_thumbnail.jpg';
 
-import {
+import { 
   List,
   StreamContainer,
   StreamRow,
@@ -16,18 +16,18 @@ import {
   TagRow,
   TagView,
   TagText,
-} from './styles';
+ } from './styles';
 
 const StreamList: React.FC = () => {
   const StreamItem = () => (
     <StreamContainer>
       <StreamThumbnail source={streamThumbnail} />
 
-      <StreamRow>
-        <StreamColumn>
+      <StreamColumn>
+        <StreamRow>
           <StreamHeader>
             <StreamAvatar />
-            <StreamUsername numberOfLines={1}>rodz_oficial</StreamUsername>
+            <StreamUsername numberOfLines={1}>victor.rosas</StreamUsername>
           </StreamHeader>
 
           <StreamDescription numberOfLines={1}>
@@ -37,7 +37,7 @@ const StreamList: React.FC = () => {
           <StreamCategory numberOfLines={1}>
             Science & Technology
           </StreamCategory>
-        </StreamColumn>
+        </StreamRow>
 
         <TagRow>
           <TagView>
@@ -47,9 +47,9 @@ const StreamList: React.FC = () => {
             <TagText>Web Development</TagText>
           </TagView>
         </TagRow>
-      </StreamRow>
+      </StreamColumn>
     </StreamContainer>
-  );
+  )
 
   return (
     <List>
